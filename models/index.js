@@ -9,6 +9,7 @@
 */
 const env = 'localhost';
 //const env = 'tessel-test-1';
+//const env = 'tessel-test-2';
 
 var config = require('../mongo-config.json')[env];
 
