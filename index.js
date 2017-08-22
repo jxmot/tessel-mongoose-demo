@@ -12,6 +12,7 @@ const events = require('events');
 const eventEmitter = new events.EventEmitter();
 // we'll trigger an event after the database has been opened.
 eventEmitter.once('dbReady', dbReady);
+eventEmitter.once('dbDone', dbDone);
 
 //miscInfo();
 
@@ -34,21 +35,38 @@ db.conn.once('open', function() {
 function dbReady() {
     console.log('index.js - dbReady, writing some documents to the database...');
 
-    for(var ix = 0;ix < 5;ix++) {
+    const max = 5;
+
+    for(var ix = 0;ix < max;ix++) {
 
         var newTestDoc = {
             content: 'This is a test - ' + ix,
-            env: db.env
+            env: db.env,
+            ix: ix
         };
-        
+
         var tmp = new db.TestModel(newTestDoc);
         tmp.save(function (err, doc) {
             if (err) throw err;
             else console.log('added - '+JSON.stringify(doc));
+
+            if((doc.ix+1) >= max) eventEmitter.emit('dbDone');
         });
     }
     console.log('Done!?');
     console.log('================================================');
+};
+
+function dbDone() {
+
+    console.log('index.js - dbDone, retrieving all documents with env = ' + db.env);
+
+    db.TestModel.find({'env': db.env})
+    .exec(function (err, docs) {
+        if(err) throw err;
+        console.log('index.js - dbDone, found - ');
+        console.log(JSON.stringify(docs, null, 2));
+    });
 };
 
 // miscellaneous information...
