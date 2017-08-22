@@ -2,7 +2,7 @@
 
 # Overview
 
-This is a demonstration of using the NodeJS package `mongoose` on a **Tessel 2**. This application will create five documents in a collection named **`testdocs`**. After all five documents have been created the application will read *all* documents where the `env` field matches the current *environment*.
+This is a demonstration of using the NodeJS package `mongoose` on a **Tessel 2**. This application will create five MongoDB documents in a collection named **`testdocs`**. After all five documents have been created the application will read *all* documents where the `env` field matches the current *environment*.
 
 This document tries to explain things in a manner suitable to most any skill level. However *some* assumptions regarding the reader are made - 
 
