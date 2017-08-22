@@ -8,7 +8,7 @@
     parameters for connecting to the database
 */
 const env = 'localhost';
-//const env = 'tessel-test-1';
+//const env = 'pcmongodb';
 //const env = 'usemlab';
 
 var config = require('../mongo-config.json')[env];

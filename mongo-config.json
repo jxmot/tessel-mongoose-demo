@@ -2,7 +2,7 @@
     "localhost": {
         "MONGODB_URI": "mongodb://localhost/tessel_mongoose_test_db"
     },
-    "tessel-test-1": {
+    "pcmongodb": {
         "MONGODB_URI": "mongodb://192.168.0.8/tessel_mongoose_test_db"
     },
     "usemlab": {
