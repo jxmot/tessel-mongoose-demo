@@ -8,7 +8,7 @@ This document tries to explain things in a manner suitable to most any skill lev
 
 * They are a proud owner of at least one **Tessel 2**.
 * They want to use MongoDB in their own application and need somewhere to start.
-* 
+* They might have been having difficulty getting `mongoose` to work correctly.
 
 # Requirements
 
@@ -50,7 +50,7 @@ First we'll run the application on your PC, that's so we can be sure that your M
 }
 ```
 
-Under `"pcmongodb"` change the IP address in `"MONGODB_URI"` to the address of your PC. However if your using an mLab database then change the URI under`"usemlab"`.
+Under `"pcmongodb"` change the IP address in `"MONGODB_URI"` to the address of your PC. However if your using an mLab database then change the URI under`"usemlab"`. 
 
 **Save the file.**
 
