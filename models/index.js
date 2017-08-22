@@ -17,9 +17,9 @@ console.log('env         = ' + env);
 console.log('MONGODB_URI = ' + config.MONGODB_URI);
 
 var mongoose = require('mongoose');
-var Promise = require('bluebird');
 
 // satisfy the deprecation warning
+var Promise = require('bluebird');
 mongoose.Promise = Promise;
 
 // this object will contain the model(s) and references

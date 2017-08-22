@@ -5,25 +5,21 @@
 
     >t2 run index.js --full=true
 */
-/*
-    For triggering and handing events
-*/
+// For triggering and handing events
 const events = require('events');
 const eventEmitter = new events.EventEmitter();
 // we'll trigger an event after the database has been opened.
 eventEmitter.once('dbReady', dbReady);
+// and another when we're done writing to it.
 eventEmitter.once('dbDone', dbDone);
 
+// Send some miscellaneous info to the console...
 //miscInfo();
 
-/*
-    Set up the database with our models
-*/
+// Set up the database with our models
 var db = require('./models');
 
-/*  
-    Listen on the port that was configured for us
-*/
+// Listen on the port that was configured for us
 db.conn.once('open', function() {
     console.log('================================================');
     console.log('index.js - success, database is open via mongoose');
@@ -31,10 +27,11 @@ db.conn.once('open', function() {
     eventEmitter.emit('dbReady');
 });
 
-// event handler
+// event handler - database connection is ready for use
 function dbReady() {
     console.log('index.js - dbReady, writing some documents to the database...');
 
+    // write only a few documents to the collection...
     const max = 5;
 
     for(var ix = 0;ix < max;ix++) {
@@ -57,6 +54,7 @@ function dbReady() {
     console.log('================================================');
 };
 
+// event handler - all docs have been written to the database
 function dbDone() {
 
     console.log('index.js - dbDone, retrieving all documents with env = ' + db.env);
