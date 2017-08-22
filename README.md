@@ -2,13 +2,19 @@
 
 # Overview
 
-This is a demonstration of MongoDB / mongoose running on a **Tessel 2**. This application will create five documents in a collection named **`testdocs`**. After all five documents have been created the application will read *all* documents where the `env` field matches the current *environment*.
+This is a demonstration of using the NodeJS package `mongoose` on a **Tessel 2**. This application will create five documents in a collection named **`testdocs`**. After all five documents have been created the application will read *all* documents where the `env` field matches the current *environment*.
+
+This document tries to explain things in a manner suitable to most any skill level. However *some* assumptions regarding the reader are made - 
+
+* They are a proud owner of at least one **Tessel 2**.
+* They want to use MongoDB in their own application and need somewhere to start.
+* 
 
 # Requirements
 
-Before continuing please read through this tutorial and have - 
+Before continuing please read through this document and have - 
 
-* A Tessel 2 - The following *must* be completed before starting this tutorial :
+* A Tessel 2 - The following *must* be completed before continuing :
     * You should already have connected your Tessel 2 to your PC and have completed the initialization steps as described in the Tessel 2 documentation(<https://tessel.github.io/t2-start/>).
     * Completed the "blinky" exercise and and have it working.
 * NodeJS and npm installed on your PC. I recommend 6.10.2 / 3.10.10
