@@ -3,7 +3,7 @@
 
     To run this on the Tessel 2 :
 
-    >t2 run index.js --compress=false --full=true
+    >t2 run index.js --full=true
 */
 /*
     For triggering and handing events
