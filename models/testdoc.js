@@ -9,6 +9,7 @@ var testSchema= new Schema({
     date: {type: Date, default: Date.now},
     epochdate: {type: Number, default: Date.now},
     content: String,
+    ix: Number,
     env: String
 });
 
