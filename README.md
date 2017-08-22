@@ -23,7 +23,7 @@ This document tries to explain things in a manner suitable to most any skill lev
 
 If you're looking for the quick solution to running a `mongoose` enabled application on the Tessel 2 then you will need to add `--full=true` to the `t2` command. For example - 
 
-`t2 run index.js` **<- will not work**
+`t2 run index.js` **<- this will not work**
 
 `t2 run index.js` **`--full=true`** **<- success!**
 
