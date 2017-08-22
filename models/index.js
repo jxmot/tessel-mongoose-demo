@@ -12,7 +12,8 @@ const env = 'localhost';
 
 var config = require('../mongo-config.json')[env];
 
-console.log(config.MONGODB_URI);
+console.log('env         = ' + env);
+console.log('MONGODB_URI = ' + config.MONGODB_URI);
 
 var mongoose = require('mongoose');
 var Promise = require('bluebird');
@@ -40,7 +41,7 @@ mongoose.connect(config.MONGODB_URI, {useMongoClient: true}, function(err, data)
 	if(err)
 	    console.log(err);
 	else{
-	    console.log('connection success');
+	    console.log('Mongoose connection success');
 	    db.connflag = true;
 	}  
 });

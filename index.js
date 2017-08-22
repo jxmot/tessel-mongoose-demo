@@ -13,7 +13,7 @@ const eventEmitter = new events.EventEmitter();
 // we'll trigger an event after the database has been opened.
 eventEmitter.once('dbReady', dbReady);
 
-miscInfo();
+//miscInfo();
 
 /*
     Set up the database with our models
@@ -33,7 +33,7 @@ db.conn.once('open', function() {
 // event handler
 function dbReady() {
     console.log('index.js - dbReady, writing some documents to the database...');
-    
+
     for(var ix = 0;ix < 5;ix++) {
 
         var newTestDoc = {
