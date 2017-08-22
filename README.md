@@ -1,5 +1,13 @@
 # tessel-mongoose-demo
 
+* [Overview](https://bitbucket.org/jxmot/tessel-mongoose-demo/overview#markdown-header-overview)
+    * [Skip to the End](https://bitbucket.org/jxmot/tessel-mongoose-demo/overview#markdown-header-skip-to-the-end)
+    * [History](https://bitbucket.org/jxmot/tessel-mongoose-demo/overview#markdown-header-history)
+* [Requirements](https://bitbucket.org/jxmot/tessel-mongoose-demo/overview#markdown-header-requirements)
+* [Running the Application](https://bitbucket.org/jxmot/tessel-mongoose-demo/overview#markdown-header-running-the-application)
+    * [Sanity Check](https://bitbucket.org/jxmot/tessel-mongoose-demo/overview#markdown-header-sanity-check)
+    * [Running on the Tessel](https://bitbucket.org/jxmot/tessel-mongoose-demo/overview#markdown-header-running-on-the-tessel)
+
 # Overview
 
 This is a demonstration of using the NodeJS package `mongoose` on a **Tessel 2**. This application will create five MongoDB documents in a collection named **`testdocs`**. After all five documents have been created the application will read *all* documents where the `env` field matches the current *environment*.
@@ -7,8 +15,23 @@ This is a demonstration of using the NodeJS package `mongoose` on a **Tessel 2**
 This document tries to explain things in a manner suitable to most any skill level. However *some* assumptions regarding the reader are made - 
 
 * They are a proud owner of at least one **Tessel 2**.
-* They want to use MongoDB in their own application and need somewhere to start.
+* They have knowledge of what *MongoDB* is.
+* They want to use MongoDB *with* Mongoose in their own application and need somewhere to start. 
 * They might have been having difficulty getting `mongoose` to work correctly.
+
+## Skip to the End
+
+If you're looking for the quick solution to running a `mongoose` enabled application on the Tessel 2 then you will need to add `--full=true` to the `t2` command. For example - 
+
+`t2 run index.js` **<- will not work**
+
+`t2 run index.js` **`--full=true`** **<- success!**
+
+The *catch* is that you need to be using version 0.1.14 (*or newer*) of the Tessel 2 CLI.
+
+## History
+
+This project is derived from the steps I've been taking to create a Node.js/Express.js/handlebars/mongoose/mongodb project for the **Tessel 2**. The purpose of which is to determine the limitations of the Tessel 2 environment. And to explore the possibility of a work around for the limitations I find.
 
 # Requirements
 
@@ -168,6 +191,6 @@ Otherwise if you're using mLab then it's not necessary to change anything.
 
 `t2 run index.js` **<- will not work**
 
-`t2 run index.js --full=true` **<- success!**
+`t2 run index.js` **`--full=true`** **<- success!**
 
 You *should* see output that is similar to the output that was created while running on Node on your PC.
