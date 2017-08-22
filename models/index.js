@@ -7,8 +7,8 @@
     Based on our run-time environment choose the appropriate 
     parameters for connecting to the database
 */
-//const env = 'localhost';
-const env = 'tessel-test-1';
+const env = 'localhost';
+//const env = 'tessel-test-1';
 
 var config = require('../mongo-config.json')[env];
 
